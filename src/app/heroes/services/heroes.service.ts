@@ -23,4 +23,8 @@ export class HeroesService {
     return this.http.get<Heroe>(`${ this.baseUrl }/heroes/${ idHeroe }`);
   }
 
+  getSugerencias(pattern: string): Observable<Heroe[]> {
+    return this.http.get<Heroe[]>(`${ this.baseUrl }/heroes?q=${ pattern }&_limit=6`);
+  }
+
 }
